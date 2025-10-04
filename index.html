@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App - Tick Task Do!</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Grid Lines -->
+            <line x1="33" y1="10" x2="33" y2="90" stroke="#2d3436" stroke-width="3"/>
+            <line x1="67" y1="10" x2="67" y2="90" stroke="#2d3436" stroke-width="3"/>
+            <line x1="10" y1="33" x2="90" y2="33" stroke="#2d3436" stroke-width="3"/>
+            <line x1="10" y1="67" x2="90" y2="67" stroke="#2d3436" stroke-width="3"/>
+            
+            <!-- O (Circle) - Top Left -->
+            <circle cx="21" cy="21" r="8" fill="none" stroke="#00b894" stroke-width="3"/>
+            
+            <!-- X - Center -->
+            <line x1="43" y1="43" x2="57" y2="57" stroke="#ff7675" stroke-width="3"/>
+            <line x1="57" y1="43" x2="43" y2="57" stroke="#ff7675" stroke-width="3"/>
+            
+            <!-- O (Circle) - Bottom Right -->
+            <circle cx="79" cy="79" r="8" fill="none" stroke="#00b894" stroke-width="3"/>
+        </svg>
+        <div class="header-text">
+            <h1>Tick Task Do!</h1>
+            <p class="subtitle">Tick the task, do the task</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Form Section -->
+        <section class="form-section">
+            <input 
+                type="text" 
+                id="todo-input" 
+                placeholder="Enter a new task..." 
+                required
+            />
+            <input 
+                type="date" 
+                id="todo-date" 
+                required
+            />
+            <button type="button" onclick="addTodo()" class="btn-add">
+                Add
+            </button>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <button onclick="filterTodos('all')" class="filter-btn active" id="filterAll">
+                All
+            </button>
+            <button onclick="filterTodos('active')" class="filter-btn" id="filterActive">
+                Active
+            </button>
+            <button onclick="filterTodos('completed')" class="filter-btn" id="filterCompleted">
+                Done
+            </button>
+            <button onclick="deleteAllTodo()" class="btn-delete-all">
+                Delete All
+            </button>
+        </section>
+
+        <!-- Todo List Section -->
+        <section class="todo-section">
+            <ul id="todo-list" class="todo-list">
+                <!-- Todo items akan ditambahkan di sini -->
+            </ul>
+            
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state">
+                <p>No tasks yet. Add your first task to start the to do list!</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Tick Task Do! by Aurelya Vazila Mirajani</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
